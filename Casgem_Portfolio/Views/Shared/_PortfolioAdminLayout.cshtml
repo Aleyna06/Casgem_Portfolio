@@ -1,7 +1,4 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@{ Layout = null; }
 
 <!doctype html>
 <html lang="en">
@@ -20,28 +17,28 @@
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="p-4 pt-5">
-                <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(/Templates/sidebar-01/images/logo.jpg); "></a>
+                <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(/Templates/sidebar-01/images/logo.jpg);"></a>
                 <ul class="list-unstyled components mb-5">
-                    
-                    <li class="active"> <a href="#">Öne Çıkan</a> </li>
-                    <li> <a href="#">Ben Kimim?</a> </li>
-                    <li> <a href="#">Cv Açıklaması</a> </li>
-                    <li> <a href="#">Hizmetlerim</a> </li>
-                    <li> <a href="#">İstatistikler</a> </li>
-                    <li> <a href="#">Referanslarım</a> </li>
-                    <li> <a href="#">Projelerim</a> </li>
-                    <li> <a href="#">İletişim</a> </li>
-                    <li> <a href="#">Mesajlar</a> </li>
-                    <li> <a href="#">Ayarlar</a> </li>
-                    <li> <a href="#">Çıkış Yap</a> </li>
-                  
+
+                    <li><a href="#">Öne Çıkan</a> </li>
+                    <li><a href="#">Ben Kimin</a> </li>
+                    <li><a href="#">Cv Açıklaması</a> </li>
+                    <li><a href="/Service/Index/">Hizmetler</a> </li>
+                    <li><a href="#">İstatistikler</a> </li>
+                    <li><a href="#">Referanslarım</a> </li>
+                    <li><a href="#">Projelerim</a> </li>
+                    <li><a href="#">İletişim</a> </li>
+                    <li><a href="#">Mesajlar</a> </li>
+                    <li><a href="#">Ayarlar</a> </li>
+                    <li><a href="#">Çıkış Yap</a> </li>
+
                 </ul>
 
                 <div class="footer">
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> Tüm Hakları Saklıdır <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
@@ -65,11 +62,11 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item ">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="#">Siteye Git</a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">CV'mi İndir</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cv'mi İndir</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">İstatistikler</a>
@@ -83,7 +80,7 @@
             </nav>
 
             <h2 class="mb-4">Sidebar #01</h2>
-           @RenderBody()
+            @RenderBody()
         </div>
     </div>
 
