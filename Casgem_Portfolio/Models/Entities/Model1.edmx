@@ -24,6 +24,16 @@
           <Property Name="MessageSubject" Type="nvarchar" MaxLength="100" />
           <Property Name="Content" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="TblReferance">
+          <Key>
+            <PropertyRef Name="ReferansID" />
+          </Key>
+          <Property Name="ReferansID" Type="int" Nullable="false" />
+          <Property Name="ReferanceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferancePozisyon" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferanceSirket" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReferanceEposta" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="TblService">
           <Key>
             <PropertyRef Name="ServiceID" />
@@ -37,6 +47,7 @@
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblReferance" EntityType="Self.TblReferance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -66,6 +77,7 @@
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" />
           <EntitySet Name="TblService" EntityType="Self.TblService" />
           <EntitySet Name="TblMessage" EntityType="CasgemPortfolioModel.TblMessage" />
+          <EntitySet Name="TblReferance" EntityType="CasgemPortfolioModel.TblReferance" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -76,6 +88,16 @@
           <Property Name="SenderMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MessageSubject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblReferance">
+          <Key>
+            <PropertyRef Name="ReferansID" />
+          </Key>
+          <Property Name="ReferansID" Type="Int32" Nullable="false" />
+          <Property Name="ReferanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferancePozisyon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferanceSirket" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferanceEposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -112,6 +134,17 @@
                 <ScalarProperty Name="SenderMail" ColumnName="SenderMail" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblReferance">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblReferance">
+              <MappingFragment StoreEntitySet="TblReferance">
+                <ScalarProperty Name="ReferanceEposta" ColumnName="ReferanceEposta" />
+                <ScalarProperty Name="ReferanceSirket" ColumnName="ReferanceSirket" />
+                <ScalarProperty Name="ReferancePozisyon" ColumnName="ReferancePozisyon" />
+                <ScalarProperty Name="ReferanceName" ColumnName="ReferanceName" />
+                <ScalarProperty Name="ReferansID" ColumnName="ReferansID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
