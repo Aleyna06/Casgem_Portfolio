@@ -24,6 +24,17 @@
           <Property Name="MessageSubject" Type="nvarchar" MaxLength="100" />
           <Property Name="Content" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="TblProjects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProjectDescription" Type="nvarchar(max)" />
+          <Property Name="ProjectDate" Type="date" />
+          <Property Name="ProjectType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TechnologiesUsed" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="TblReferance">
           <Key>
             <PropertyRef Name="ReferansID" />
@@ -47,6 +58,7 @@
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProjects" EntityType="Self.TblProjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblReferance" EntityType="Self.TblReferance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -78,6 +90,7 @@
           <EntitySet Name="TblService" EntityType="Self.TblService" />
           <EntitySet Name="TblMessage" EntityType="CasgemPortfolioModel.TblMessage" />
           <EntitySet Name="TblReferance" EntityType="CasgemPortfolioModel.TblReferance" />
+          <EntitySet Name="TblProjects" EntityType="CasgemPortfolioModel.TblProjects" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -98,6 +111,17 @@
           <Property Name="ReferancePozisyon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ReferanceSirket" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ReferanceEposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblProjects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDate" Type="DateTime" Precision="0" />
+          <Property Name="ProjectType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TechnologiesUsed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -145,6 +169,18 @@
                 <ScalarProperty Name="ReferancePozisyon" ColumnName="ReferancePozisyon" />
                 <ScalarProperty Name="ReferanceName" ColumnName="ReferanceName" />
                 <ScalarProperty Name="ReferansID" ColumnName="ReferansID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProjects">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblProjects">
+              <MappingFragment StoreEntitySet="TblProjects">
+                <ScalarProperty Name="TechnologiesUsed" ColumnName="TechnologiesUsed" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+                <ScalarProperty Name="ProjectDate" ColumnName="ProjectDate" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
