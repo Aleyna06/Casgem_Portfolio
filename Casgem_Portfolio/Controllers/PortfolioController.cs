@@ -28,5 +28,22 @@ namespace Casgem_Portfolio.Controllers
             ViewBag.featureImage = db.TblFeature.Select(x => x.FeatureImageURL).FirstOrDefault();
             return PartialView();
         }
+        public PartialViewResult PartialHareketliBolum()
+        {
+            var values = db.TblHareketliBolum.ToList();
+            return PartialView(); //hareketli bölüm dinamik yapılacak ödev 
+        }
+        public PartialViewResult MyResume()
+        {
+            var values = db.TblREsume.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialStatıstıc()
+        {
+            ViewBag.totalservice = db.TblService.Count(); //count methodu ilgili tablonun kayıt sayısını döndürür
+            ViewBag.totalmessage = db.TblMessage.Count();
+            ViewBag.totalThanksMessage = db.TblMessage.Where(x => x.MessageSubject == "Teşekkür").Count(); //teşekkür mesajı sayısı
+            return PartialView();
+        }
     }
 }
