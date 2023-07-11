@@ -1,31 +1,106 @@
 ﻿@model List<Casgem_Portfolio.Models.Entities.TblMessage>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
-    int count = 0;
-}
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+                int count = 0; }
 
-<h2>Gelen Kutusu</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelen Kutusu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
 
-<table class="table table-hover">
-    <tr>
-        <th>#</th>
-        <th>Gönderen</th>
-        <th>Konu</th>
-        <th>Mesajı Aç</th>
-        <th>Sil</th>
-    </tr>
+        .container {
+            margin-top: 50px;
+        }
 
-    @foreach (var item in Model)
-    {
-        count++;
-        <tr>
-            <td>@count</td>
-            <td>@item.NameSurname</td>
-            <td>@item.MessageSubject</td>
-            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-info">Mesajı Aç</a></td>
-            <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Mesajı Sil</a></td>
-        </tr>
-    }
-</table>
+        h2 {
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        table {
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-info:hover {
+                background-color: #138496;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gelen Kutusu</h2>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Gönderen</th>
+                    <th>Konu</th>
+                    <th>Mesajı Aç</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.NameSurname</td>
+                        <td>@item.MessageSubject</td>
+                        <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-info">Mesajı Aç</a></td>
+                        <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Mesajı Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
