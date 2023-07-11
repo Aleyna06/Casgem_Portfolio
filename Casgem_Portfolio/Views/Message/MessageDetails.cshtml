@@ -4,13 +4,34 @@
     Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
 }
 
-<h2>Mesaj Detayları</h2>
-
-Konu: @Html.DisplayFor(x => x.MessageSubject)
-<br />
-Gönderen :@Html.DisplayFor(x => x.NameSurname)
-<br />
-Mail Adresi: @Html.DisplayFor(x => x.SenderMail)
-<br />
-Mesaj :@Html.DisplayFor(x => x.Content)
+@*<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+        <h2>Mesaj Detayları</h2>
+        <p>
+            <strong>Konu:</strong> @Html.DisplayFor(x => x.MessageSubject)
+        </p>
+        <p>
+            <strong>Gönderen:</strong> @Html.DisplayFor(x => x.NameSurname)
+        </p>
+        <p>
+            <strong>Mail Adresi:</strong> @Html.DisplayFor(x => x.SenderMail)
+        </p>
+        <p>
+            <strong>Mesaj:</strong> @Html.DisplayFor(x => x.Content)
+        </p>
+    </div>*@
+<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background-color: #f9f9f9;">
+    <h2 style="margin-bottom: 10px; color: #333;">Mesaj Detayları</h2>
+    <div style="margin-bottom: 10px;">
+        <strong>Konu:</strong> <span style="font-weight: bold; color: #555;">@Html.DisplayFor(x => x.MessageSubject)</span>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <strong>Gönderen:</strong> <span style="font-weight: bold; color: #555;">@Html.DisplayFor(x => x.NameSurname)</span>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <strong>Mail Adresi:</strong> <span style="font-weight: bold; color: #555;">@Html.DisplayFor(x => x.SenderMail)</span>
+    </div>
+    <div>
+        <strong>Mesaj:</strong> <span style="font-weight: bold; color: #555;">@Html.DisplayFor(x => x.Content)</span>
+    </div>
+</div>
 
