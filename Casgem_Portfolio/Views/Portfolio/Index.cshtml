@@ -14,37 +14,14 @@ Author URL: http://w3layouts.com
 
 <body>
     <!-- header -->
-    @Html.Partial("PartialNavbar") 
+    @Html.Partial("PartialNavbar")
     <!-- //header -->
     <!-- banner section -->
-   @Html.Action("PartialFeature")
+    @Html.Action("PartialFeature")
     <!-- //banner section -->
     <!-- home page about section -->
-    <section class="w3l-index3" id="about">
-        <div class="midd-w3 py-5">
-            <div class="container py-lg-5 py-md-3">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="position-relative">
-                            <img src="assets/images/myphoto.jpg" alt="" class="radius-image img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-8 mt-lg-0 mt-5">
-                        <h5 class="title-small mb-2">Who am i?</h5>
-                        <h3 class="title-big">I'm Alexander Smith, a visual UI/UX Designer and Web Developer</h3>
-                        <p class="mt-4">
-                            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                            ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Non quae, fugiat consequatur voluptatem nihil ad. Lorem ipsum dolor sit amet. Lorem ipsum
-                            dolor sit, amet consectetur adipisicing elit. Dolor ipsum non velit reprehenderit, molestias
-                            culpa!
-                        </p>
-                        <a href="#download" class="btn btn-style btn-primary mt-lg-5 mt-4">Download CV</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
+    @Html.Action("PartialWhoami")
     <!-- //home page about section -->
     <!-- home page second section -->
     @Html.Action("MyResume")
@@ -170,7 +147,7 @@ Author URL: http://w3layouts.com
     </section>
     <!-- //home page services section -->
     <!-- stats -->
-  @Html.Action("PartialStatıstıc")
+    @Html.Action("PartialStatıstıc")
     <!-- //stats -->
     <!-- testimonials -->
     <section class="w3l-clients" id="clients">
@@ -404,24 +381,25 @@ Author URL: http://w3layouts.com
         <button onclick="topFunction()" id="movetop" title="Go to top">
             <span class="fa fa-angle-up"></span>
         </button>
-        <script>// When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction()
-    };
+        <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction()
+            };
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("movetop").style.display = "block";
-      } else {
-        document.getElementById("movetop").style.display = "none";
-      }
-    }
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("movetop").style.display = "block";
+                } else {
+                    document.getElementById("movetop").style.display = "none";
+                }
+            }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }</script>
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }</script>
         <!-- /move top -->
     </section>
     <!-- //Footer -->
@@ -431,7 +409,8 @@ Author URL: http://w3layouts.com
 
     <script src="assets/js/jquery-3.3.1.min.js"></script><!-- default jQuery -->
     <!-- /typig-text-->
-    <script>const typedTextSpan = document.querySelector(".typed-text");
+    <script>
+const typedTextSpan = document.querySelector(".typed-text");
   const cursorSpan = document.querySelector(".cursor");
 
   //const textArray = ["UI/UX Designer", "Freelancer", "Web developer"];
@@ -479,97 +458,100 @@ Author URL: http://w3layouts.com
     <script src="assets/js/owl.carousel.js"></script>
 
     <!-- script for services -->
-    <script>$(document).ready(function () {
-    $('.owl-two').owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      responsiveClass: true,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      autoplaySpeed: 1000,
-      autoplayHoverPause: false,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        480: {
-          items: 1,
-          nav: false
-        },
-        700: {
-          items: 1,
-          nav: false
-        },
-        1090: {
-          items: 3,
-          nav: false
-        }
-      }
-    })
-  })</script>
+    <script>
+    $(document).ready(function () {
+            $('.owl-two').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                responsiveClass: true,
+                autoplay: false,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    700: {
+                        items: 1,
+                        nav: false
+                    },
+                    1090: {
+                        items: 3,
+                        nav: false
+                    }
+                }
+            })
+        })</script>
     <!-- //script for services -->
     <!-- script for tesimonials carousel slider -->
-    <script>$(document).ready(function () {
-    $("#owl-demo1").owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: false,
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        736: {
-          items: 1,
-          nav: false
-        },
-        1000: {
-          items: 2,
-          nav: false,
-          loop: false
-        }
-      }
-    })
-  })</script>
+    <script>
+    $(document).ready(function () {
+            $("#owl-demo1").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    736: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: false,
+                        loop: false
+                    }
+                }
+            })
+        })</script>
     <!-- //script for tesimonials carousel slider -->
     <!-- video popup -->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script>$(document).ready(function () {
-    $('.popup-with-zoom-anim').magnificPopup({
-      type: 'inline',
+    <script>
+    $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
 
-      fixedContentPos: false,
-      fixedBgPos: true,
+                fixedContentPos: false,
+                fixedBgPos: true,
 
-      overflowY: 'auto',
+                overflowY: 'auto',
 
-      closeBtnInside: true,
-      preloader: false,
+                closeBtnInside: true,
+                preloader: false,
 
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'my-mfp-zoom-in'
-    });
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
 
-    $('.popup-with-move-anim').magnificPopup({
-      type: 'inline',
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
 
-      fixedContentPos: false,
-      fixedBgPos: true,
+                fixedContentPos: false,
+                fixedBgPos: true,
 
-      overflowY: 'auto',
+                overflowY: 'auto',
 
-      closeBtnInside: true,
-      preloader: false,
+                closeBtnInside: true,
+                preloader: false,
 
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'my-mfp-slide-bottom'
-    });
-  });</script>
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
+        });</script>
     <!-- //video popup -->
     <!-- stats number counter-->
     <script src="assets/js/jquery.waypoints.min.js"></script>
@@ -577,37 +559,39 @@ Author URL: http://w3layouts.com
     <script>$('.counter').countUp();</script>
     <!-- //stats number counter -->
     <!-- disable body scroll which navbar is in active -->
-    <script>$(function () {
-    $('.navbar-toggler').click(function () {
-      $('body').toggleClass('noscroll');
-    })
-  });</script>
+    <script>
+    $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });</script>
     <!-- disable body scroll which navbar is in active -->
     <!--/MENU-JS-->
-    <script>$(window).on("scroll", function () {
-    var scroll = $(window).scrollTop();
+    <script>
+    $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
 
-    if (scroll >= 80) {
-      $("#site-header").addClass("nav-fixed");
-    } else {
-      $("#site-header").removeClass("nav-fixed");
-    }
-  });
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
 
-  //Main navigation Active Class Add Remove
-  $(".navbar-toggler").on("click", function () {
-    $("header").toggleClass("active");
-  });
-  $(document).on("ready", function () {
-    if ($(window).width() > 991) {
-      $("header").removeClass("active");
-    }
-    $(window).on("resize", function () {
-      if ($(window).width() > 991) {
-        $("header").removeClass("active");
-      }
-    });
-  });</script>
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });</script>
     <!--//MENU-JS-->
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.min.js"></script>

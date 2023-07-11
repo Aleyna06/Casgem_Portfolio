@@ -45,5 +45,10 @@ namespace Casgem_Portfolio.Controllers
             ViewBag.totalThanksMessage = db.TblMessage.Where(x => x.MessageSubject == "Teşekkür").Count(); //teşekkür mesajı sayısı
             return PartialView();
         }
+        public PartialViewResult PartialWhoami()
+        {
+           
+            return PartialView();
+        }
     }
 }
