@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ReferanceController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\StatısticController.cs" />
+    <Compile Include="Controllers\WhoamiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,6 +218,7 @@
     <Content Include="Models\Entities\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Data\Aleyna çelik.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -426,6 +428,7 @@
     <Content Include="Views\Statıstic\Index.cshtml" />
     <Content Include="Views\Portfolio\PartialWhoami.cshtml" />
     <Content Include="Views\Portfolio\PartialServices.cshtml" />
+    <Content Include="Views\Whoami\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
