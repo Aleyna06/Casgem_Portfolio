@@ -47,7 +47,13 @@ namespace Casgem_Portfolio.Controllers
         }
         public PartialViewResult PartialWhoami()
         {
-           
+
+            return PartialView();
+        }
+
+        public PartialViewResult PartialServices()
+        {
+            ViewBag.departmentname = db.TblDeparment.ToList().FirstOrDefault();
             return PartialView();
         }
     }

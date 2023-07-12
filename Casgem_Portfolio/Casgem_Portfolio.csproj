@@ -425,6 +425,7 @@
     <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
     <Content Include="Views\Statıstic\Index.cshtml" />
     <Content Include="Views\Portfolio\PartialWhoami.cshtml" />
+    <Content Include="Views\Portfolio\PartialServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
