@@ -15,6 +15,27 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TblAbouts">
+          <Key>
+            <PropertyRef Name="IDAbouts" />
+          </Key>
+          <Property Name="IDAbouts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+          <Property Name="Des" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Admina" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TblDeparment">
           <Key>
             <PropertyRef Name="DeparmentID" />
@@ -103,8 +124,44 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplloyeeCount' does not ha
           <Property Name="ServiceNumber" Type="char" MaxLength="2" />
           <Property Name="ServiceContent" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="TblSkill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Skill" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SocialMediaURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SocialMediaIcon" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblVideo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VideoUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="VideoDes" Type="nvarchar" MaxLength="500" />
+          <Property Name="VideoTitle" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tblwhoami">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="int" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Soyad" Type="varchar" MaxLength="50" />
+          <Property Name="Fotograf" Type="varchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="text" />
+        </EntityType>
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAbouts" EntityType="Self.TblAbouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDeparment" EntityType="Self.TblDeparment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
@@ -114,6 +171,10 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplloyeeCount' does not ha
           <EntitySet Name="TblReferance" EntityType="Self.TblReferance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblREsume" EntityType="Self.TblREsume" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblVideo" EntityType="Self.TblVideo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tblwhoami" EntityType="Self.Tblwhoami" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -149,6 +210,12 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplloyeeCount' does not ha
           <EntitySet Name="sysdiagrams" EntityType="CasgemPortfolioModel.sysdiagrams" />
           <EntitySet Name="TblDeparment" EntityType="CasgemPortfolioModel.TblDeparment" />
           <EntitySet Name="TblEmployee" EntityType="CasgemPortfolioModel.TblEmployee" />
+          <EntitySet Name="TblAbouts" EntityType="CasgemPortfolioModel.TblAbouts" />
+          <EntitySet Name="TblAdmin" EntityType="CasgemPortfolioModel.TblAdmin" />
+          <EntitySet Name="TblSkill" EntityType="CasgemPortfolioModel.TblSkill" />
+          <EntitySet Name="TblSocialMedia" EntityType="CasgemPortfolioModel.TblSocialMedia" />
+          <EntitySet Name="TblVideo" EntityType="CasgemPortfolioModel.TblVideo" />
+          <EntitySet Name="Tblwhoami" EntityType="CasgemPortfolioModel.Tblwhoami" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -223,6 +290,61 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplloyeeCount' does not ha
           <Property Name="EmployeeCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeSalary" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="EmployeeDepartment" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblAbouts">
+          <Key>
+            <PropertyRef Name="IDAbouts" />
+          </Key>
+          <Property Name="IDAbouts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Des" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Admina" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSkill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Skill" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SocialMediaURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SocialMediaIcon" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblVideo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VideoUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VideoDes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VideoTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tblwhoami">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="Int32" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fotograf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -330,6 +452,67 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmplloyeeCount' does not ha
                 <ScalarProperty Name="EmployeeCity" ColumnName="EmployeeCity" />
                 <ScalarProperty Name="EmployeName" ColumnName="EmployeName" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAbouts">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAbouts">
+              <MappingFragment StoreEntitySet="TblAbouts">
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Des" ColumnName="Des" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDAbouts" ColumnName="IDAbouts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Admina" ColumnName="Admina" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSkill">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblSkill">
+              <MappingFragment StoreEntitySet="TblSkill">
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="SocialMediaIcon" ColumnName="SocialMediaIcon" />
+                <ScalarProperty Name="SocialMediaURL" ColumnName="SocialMediaURL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblVideo">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblVideo">
+              <MappingFragment StoreEntitySet="TblVideo">
+                <ScalarProperty Name="VideoTitle" ColumnName="VideoTitle" />
+                <ScalarProperty Name="VideoDes" ColumnName="VideoDes" />
+                <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tblwhoami">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.Tblwhoami">
+              <MappingFragment StoreEntitySet="Tblwhoami">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="KisiId" ColumnName="KisiId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

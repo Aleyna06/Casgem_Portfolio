@@ -56,5 +56,12 @@ namespace Casgem_Portfolio.Controllers
             ViewBag.departmentname = db.TblDeparment.ToList().FirstOrDefault();
             return PartialView();
         }
+        [HttpGet]
+        public FileResult Download()
+        {
+            byte[] fileBytes = System.IO.File.ReadAllBytes(this.Server.MapPath("\\Data\\Aleyna çelik.pdf"));
+            string fileName = "Aleyna çelik.pdf";
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
     }
 }
